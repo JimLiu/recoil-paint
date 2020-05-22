@@ -107,16 +107,16 @@ function computeBoundingBox(items) {
   };
 }
 
-function itemsSelector(key, atom) {
+function itemsSelector(key, state) {
   return selector({
     key,
     get: ({ get }) => {
-      const selectedIds = get(atom);
-      if (!selectedIds.length) {
+      const ids = get(state);
+      if (!ids.length) {
         return [];
       }
 
-      return selectedIds.map(id => get(itemWithId(id)));
+      return ids.map(id => get(itemWithId(id)));
     },
     set: ({ set }, newValue) => {
       newValue.forEach(item => {
