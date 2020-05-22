@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/static/js/main.561049da.chunk.js",
-    "main.js.map": "/static/js/main.561049da.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.1e798eb8.js",
-    "runtime-main.js.map": "/static/js/runtime-main.1e798eb8.js.map",
-    "static/js/2.3dd31e08.chunk.js": "/static/js/2.3dd31e08.chunk.js",
-    "static/js/2.3dd31e08.chunk.js.map": "/static/js/2.3dd31e08.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.643125f1f779bc5bb9c6bbbe52e25b99.js": "/precache-manifest.643125f1f779bc5bb9c6bbbe52e25b99.js",
-    "service-worker.js": "/service-worker.js",
-    "static/js/2.3dd31e08.chunk.js.LICENSE.txt": "/static/js/2.3dd31e08.chunk.js.LICENSE.txt"
+    "main.js": "/recoil-paint/static/js/main.561049da.chunk.js",
+    "main.js.map": "/recoil-paint/static/js/main.561049da.chunk.js.map",
+    "runtime-main.js": "/recoil-paint/static/js/runtime-main.752b6890.js",
+    "runtime-main.js.map": "/recoil-paint/static/js/runtime-main.752b6890.js.map",
+    "static/js/2.3dd31e08.chunk.js": "/recoil-paint/static/js/2.3dd31e08.chunk.js",
+    "static/js/2.3dd31e08.chunk.js.map": "/recoil-paint/static/js/2.3dd31e08.chunk.js.map",
+    "index.html": "/recoil-paint/index.html",
+    "precache-manifest.7e84cd129efbcc1709195c66256bfd63.js": "/recoil-paint/precache-manifest.7e84cd129efbcc1709195c66256bfd63.js",
+    "service-worker.js": "/recoil-paint/service-worker.js",
+    "static/js/2.3dd31e08.chunk.js.LICENSE.txt": "/recoil-paint/static/js/2.3dd31e08.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.1e798eb8.js",
+    "static/js/runtime-main.752b6890.js",
     "static/js/2.3dd31e08.chunk.js",
     "static/js/main.561049da.chunk.js"
   ]
