@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "034c3919f65f7d9ea402bebb9f274b4c",
+    "revision": "3a6adfa525a67f6e3c209495c4407abd",
     "url": "/recoil-paint/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/recoil-paint/static/js/2.9602c6e8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ebdc62074d0505da78d0",
-    "url": "/recoil-paint/static/js/main.1fa4e592.chunk.js"
+    "revision": "ef8025d7665dcb98c330",
+    "url": "/recoil-paint/static/js/main.0415e5ac.chunk.js"
   },
   {
     "revision": "0a0689a8ce8eec00d685",
