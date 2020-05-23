@@ -9,8 +9,8 @@ export default function useMove(func) {
     func({ status, isMoving, origin, offset  });
   }, [func]);
 
-  const handleMouseDown = useCallback(({ clientX, clientY }) => {
-    let origin = { clientX, clientY };
+  const handleMouseDown = useCallback(({ clientX, clientY, metaKey, shiftKey }) => {
+    let origin = { clientX, clientY, metaKey, shiftKey };
     setIsMoving(true);
     setOrigin(origin);
     callback('start', true, origin, offset);

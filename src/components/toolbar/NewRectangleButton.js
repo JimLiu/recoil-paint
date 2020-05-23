@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRecoilState, useSetRecoilState, useRecoilValue } from 'recoil';
 import Button from './Button';
-import SquareIcon from './icons/Square';
+import SquareIcon from '../icons/Square';
 import {
   itemIdsState,
   movingItemIdsState,
@@ -9,8 +9,8 @@ import {
   selectedIdsState,
   generateId,
   setNewItemOrigin,
-} from '../atoms';
-import useMove from './hooks/useMove';
+} from '../../atoms';
+import useMoveItems from '../hooks/useMoveItems';
 
 export default function NewRectangleButton({ style }) {
   const [itemIds, setItemIds] = useRecoilState(itemIdsState);
@@ -18,7 +18,7 @@ export default function NewRectangleButton({ style }) {
   const setSelectedIds = useSetRecoilState(selectedIdsState);
   const canvasLayout = useRecoilValue(canvasLayoutState);
 
-  const { onMouseDown } = useMove(({ status, origin, offset, isMoving }) => {
+  const { onMouseDown } = useMoveItems(({ status, origin }) => {
     if (status === 'start') {
       let id = generateId();
       setNewItemOrigin(origin.clientX - canvasLayout.x, origin.clientY - canvasLayout.y);

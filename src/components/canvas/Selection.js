@@ -2,15 +2,15 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native-web';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import ResizeHandler from './ResizeHandler';
-import { movingItemIdsState, selectedIdsState, selectionBoundingBox } from '../atoms';
-import useMove from './hooks/useMove';
+import { movingItemIdsState, selectedIdsState, selectionBoundingBox } from '../../atoms';
+import useMoveItems from '../hooks/useMoveItems';
 
 export default function Selection() {
   const selectedIds = useRecoilValue(selectedIdsState);
   const selection = useRecoilValue(selectionBoundingBox);
   const setMovingItemIds = useSetRecoilState(movingItemIdsState);
 
-  const { onMouseDown } = useMove(({ status }) => {
+  const { onMouseDown } = useMoveItems(({ status }) => {
     if (!selection) {
       return null;
     }

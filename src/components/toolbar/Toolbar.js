@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native-web';
 import Button from './Button';
-import ImageIcon from './icons/Image';
+import ImageIcon from '../icons/Image';
 import NewRectangleButton from './NewRectangleButton';
-import StatisticsIcon from './icons/Statistics';
+import StatisticsIcon from '../icons/Statistics';
 
 export default function Toolbar() {
   return (
