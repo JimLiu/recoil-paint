@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native-web';
 import Canvas from './canvas/Canvas';
 import Toolbar from './toolbar/Toolbar';
+import InformationBar from './infobar/InformationBar';
 
 export default function Main() {
   return (
@@ -10,7 +11,7 @@ export default function Main() {
         <Toolbar />
       </View>
       <Canvas />
-      <View style={styles.right}></View>
+      <InformationBar />
     </View>
   );
 }
@@ -28,10 +29,4 @@ const styles = StyleSheet.create({
     borderRightType: 'solid',
     padding: 16
   },
-  right: {
-    width: 200,
-    borderLeftWidth: 1,
-    borderLeftColor: '#ccc',
-    borderLeftType: 'solid',
-  }
 })

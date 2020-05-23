@@ -137,3 +137,8 @@ export const selectionBoundingBox = selector({
     return computeBoundingBox(get(selectedItemsSelector));
   }
 });
+
+export const backgroundColorState = atom({
+  key: 'backgroundColorState',
+  default: 'white'
+});

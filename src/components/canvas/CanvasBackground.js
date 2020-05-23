@@ -1,16 +1,17 @@
 import React, { useCallback } from 'react';
 import { View, StyleSheet } from 'react-native-web';
-import { useSetRecoilState } from 'recoil';
-import { selectedIdsState } from '../../atoms';
+import { useSetRecoilState, useRecoilValue } from 'recoil';
+import { selectedIdsState, backgroundColorState } from '../../atoms';
 
 export default function CanvasBackground(props) {
   const setSelectedIds = useSetRecoilState(selectedIdsState);
+  const backgroundColor = useRecoilValue(backgroundColorState);
 
   const handleClick = useCallback(() => {
     setSelectedIds([]);
   }, [setSelectedIds]);
 
   return (
-    <View style={StyleSheet.absoluteFill} onClick={handleClick} />
+    <View style={[StyleSheet.absoluteFill, { backgroundColor }]} onClick={handleClick} />
   );
 }
