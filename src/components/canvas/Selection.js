@@ -2,7 +2,8 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native-web';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import ResizeHandler from './ResizeHandler';
-import { movingItemIdsState, selectedIdsState, selectionBoundingBox } from '../../atoms';
+import { movingItemIdsState, selectedIdsState } from '../../recoil/atoms';
+import { selectionBoundingBox } from '../../recoil/selectors';
 import useMoveItems from '../hooks/useMoveItems';
 
 export default function Selection() {

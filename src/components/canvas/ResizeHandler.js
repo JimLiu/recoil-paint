@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native-web';
 import { useRecoilState } from 'recoil';
-import { selectedItemsSelector } from '../../atoms';
+import { selectedItemsSelector } from '../../recoil/selectors';
 import useMove from '../hooks/useMove';
 
 

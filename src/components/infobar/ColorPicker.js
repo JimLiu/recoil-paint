@@ -2,7 +2,7 @@ import React, { useCallback, useState, useEffect } from 'react';
 import { View, StyleSheet } from 'react-native-web';
 import { SketchPicker } from 'react-color';
 import { useRecoilState } from 'recoil';
-import { backgroundColorState } from '../../atoms';
+import { backgroundColorState } from '../../recoil/atoms';
 
 export default function ColorPicker() {
   const [shown, setShown] = useState(false);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRecoilValue, useSetRecoilState, useRecoilState } from 'recoil';
 import { createShape } from '../shapes';
-import { itemWithId, selectedIdsState, movingItemIdsState } from '../../atoms';
+import { itemWithId, selectedIdsState, movingItemIdsState } from '../../recoil/atoms';
 import useMoveItems from '../hooks/useMoveItems';
 
 export default function CanvasItem({ id }) {

@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { View, StyleSheet } from 'react-native-web';
 import { useSetRecoilState, useRecoilValue } from 'recoil';
-import { selectedIdsState, backgroundColorState } from '../../atoms';
+import { selectedIdsState, backgroundColorState } from '../../recoil/atoms';
 
 export default function CanvasBackground(props) {
   const setSelectedIds = useSetRecoilState(selectedIdsState);

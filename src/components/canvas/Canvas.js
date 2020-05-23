@@ -4,7 +4,7 @@ import { useRecoilValue, useSetRecoilState } from 'recoil';
 import CanvasItem from './CanvasItem';
 import Selection from './Selection';
 import CanvasBackground from './CanvasBackground';
-import { itemIdsState, canvasLayoutState } from '../../atoms';
+import { itemIdsState, canvasLayoutState } from '../../recoil/atoms';
 
 export default function Canvas() {
   const ref = useRef();

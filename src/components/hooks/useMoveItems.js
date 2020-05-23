@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useRecoilValue, useRecoilState } from 'recoil';
-import { movingItemsSelector, movingItemsSnapshotState, movingItemIdsState } from '../../atoms';
+import { movingItemsSnapshotState, movingItemIdsState } from '../../recoil/atoms';
+import { movingItemsSelector } from '../../recoil/selectors';
 import useMove from './useMove';
 
 export default function useMoveItems(func) {

@@ -9,7 +9,7 @@ import {
   selectedIdsState,
   generateId,
   setNewItemOrigin,
-} from '../../atoms';
+} from '../../recoil/atoms';
 import useMoveItems from '../hooks/useMoveItems';
 
 export default function NewRectangleButton({ style }) {
