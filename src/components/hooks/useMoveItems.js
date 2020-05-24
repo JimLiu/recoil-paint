@@ -14,7 +14,7 @@ export default function useMoveItems(func) {
     func(params);
 
     if (status === 'moving' && movingItemIds.length) {
-      setMovingItems(movingItems.map(item => {
+      const newMovingItems = movingItems.map(item => {
         let snapshot = movingItemsSnapshot[item.id];
         if (!snapshot) {
           return item;
@@ -25,7 +25,8 @@ export default function useMoveItems(func) {
           x: snapshot.x + offset.x,
           y: snapshot.y + offset.y,
         }
-      }))
+      });
+      setMovingItems(newMovingItems);
     }
   });
 

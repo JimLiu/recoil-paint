@@ -1,36 +1,26 @@
 import React from 'react';
-import { useRecoilValue, useSetRecoilState, useRecoilState } from 'recoil';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { createShape } from '../shapes';
-import { itemWithId, selectedIdsState, movingItemIdsState } from '../../recoil/atoms';
-import useMoveItems from '../hooks/useMoveItems';
+import { itemWithId, selectedIdsState } from '../../recoil/atoms';
 
 export default function CanvasItem({ id }) {
   const itemState = useRecoilValue(itemWithId(id));
+  const setSelectedIds = useSetRecoilState(selectedIdsState);
 
-  const setMovingItemIds = useSetRecoilState(movingItemIdsState);
-  const [selectedIds, setSelectedIds] = useRecoilState(selectedIdsState);
-
-  const { onMouseDown } = useMoveItems(({ status, origin }) => {
-    if (status === 'start') {
-      let ids;
-      if (origin.metaKey || origin.shiftKey) {
-        ids = [...selectedIds, id]
-      } else {
-        ids = [id];
+  const handleClick = ({ metaKey, shiftKey }) => {
+    setSelectedIds(ids => {
+      if (metaKey || shiftKey) {
+        return [...ids, id];
       }
-      setSelectedIds(ids);
-      setMovingItemIds([id]);
-    }
+      return [id];
+    });
+  }
 
-    if (status === 'end') {
-      setMovingItemIds([]);
-    }
-  });
 
   const Shape = createShape(itemState);
   if (!Shape) {
     return null;
   }
 
-  return <Shape {...itemState} onMouseDown={onMouseDown} />;
+  return <Shape {...itemState} onClick={handleClick} />;
 }
