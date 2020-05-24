@@ -2,7 +2,7 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native-web';
 import Toolbar from '../toolbar/Toolbar';
 import ItemInfoList from './ItemInfoList';
-import PreviewButton from './PreviewButton';
+import AddRectsButton from './AddRectsButton';
 
 export default function Sidebar() {
   return (
@@ -10,7 +10,7 @@ export default function Sidebar() {
       <Toolbar />
       <ItemInfoList />
       <View>
-        <PreviewButton />
+        <AddRectsButton />
       </View>
     </View>
   );

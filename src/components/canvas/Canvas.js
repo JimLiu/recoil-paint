@@ -19,9 +19,11 @@ export default function Canvas() {
 
   return (
     <View style={styles.root} ref={ref} onLayout={onLayout}>
-      <CanvasBackground />
-      {itemIds.map(id => <CanvasItem key={`item-${id}`} id={id} />)}
-      <Selection />
+      <View style={styles.container}>
+        <CanvasBackground />
+        {itemIds.map(id => <CanvasItem key={`item-${id}`} id={id} />)}
+        <Selection />
+      </View>
     </View>
   );
 }
@@ -31,6 +33,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
     overflow: 'auto',
+  },
+  container: {
+    flex: 1,
   },
   svg: {
     flex: 1,
