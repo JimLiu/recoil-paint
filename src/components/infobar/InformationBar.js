@@ -15,7 +15,7 @@ export default function InformationBar() {
         <Text>Document:</Text>
       </Row>
       <Row>
-        <Text>Background color:</Text>
+        <Text style={styles.title}>Background color:</Text>
         <ColorPicker />
       </Row>
     </View>
@@ -34,5 +34,8 @@ const styles = StyleSheet.create({
     marginBottom: 24,
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  title: {
+    fontWeight: 'bold'
   }
 })

@@ -18,6 +18,7 @@ export default function Toolbar() {
 const styles = StyleSheet.create({
   root: {
     flexDirection: 'row',
+    marginBottom: 16,
   },
   button: {
     marginRight: 8,

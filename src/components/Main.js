@@ -1,15 +1,13 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native-web';
 import Canvas from './canvas/Canvas';
-import Toolbar from './toolbar/Toolbar';
+import Sidebar from './sidebar/Sidebar';
 import InformationBar from './infobar/InformationBar';
 
 export default function Main() {
   return (
     <View style={styles.root}>
-      <View style={styles.left}>
-        <Toolbar />
-      </View>
+      <Sidebar />
       <Canvas />
       <InformationBar />
     </View>
@@ -21,12 +19,5 @@ const styles = StyleSheet.create({
     height: '100vh',
     flexDirection: 'row',
     backgroundColor: '#ebeef2',
-  },
-  left: {
-    width: 240,
-    borderRightWidth: 1,
-    borderRightColor: '#ccc',
-    borderRightType: 'solid',
-    padding: 16
   },
 })

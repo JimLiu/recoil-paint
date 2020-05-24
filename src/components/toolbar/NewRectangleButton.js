@@ -7,10 +7,9 @@ import {
   movingItemIdsState,
   canvasLayoutState,
   selectedIdsState,
-  generateId,
-  setNewItemOrigin,
 } from '../../recoil/atoms';
 import useMoveItems from '../hooks/useMoveItems';
+import { createNewShape } from '../../recoil/defaults';
 
 export default function NewRectangleButton({ style }) {
   const [itemIds, setItemIds] = useRecoilState(itemIdsState);
@@ -20,8 +19,8 @@ export default function NewRectangleButton({ style }) {
 
   const { onMouseDown } = useMoveItems(({ status, origin }) => {
     if (status === 'start') {
-      let id = generateId();
-      setNewItemOrigin(origin.clientX - canvasLayout.x, origin.clientY - canvasLayout.y);
+      let id = createNewShape({ x: origin.clientX - canvasLayout.x, y: origin.clientY - canvasLayout.y });
+      // setNewItemOrigin(origin.clientX - canvasLayout.x, origin.clientY - canvasLayout.y);
       setItemIds([...itemIds, id]);
       setSelectedIds([]);
       setMovingItemIds([id]);

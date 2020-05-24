@@ -1,15 +1,6 @@
-import { atom, atomFamily } from 'recoil';
+import { atom } from 'recoil';
 import memoize from '../utils/memoize';
-
-let id = 1;
-export function generateId() {
-  return id++;
-}
-
-const newItemOrigin = { x: 0, y: 0};
-export function setNewItemOrigin(x, y) {
-  Object.assign(newItemOrigin, { x, y });
-}
+import { getDefaultShape } from './defaults';
 
 export const canvasLayoutState = atom({
   key: 'canvasLayoutState',
@@ -49,16 +40,7 @@ export const movingItemsSnapshotState = atom({
 export const itemWithId =
   memoize(id => atom({
     key: `item${id}`,
-    default: {
-      id,
-      type: 'rect',
-      label: '',
-      fill: '#dbdde4',
-      x: newItemOrigin.x,
-      y: newItemOrigin.y,
-      width: 200,
-      height: 100,
-    },
+    default: getDefaultShape(id),
   }));
 
 // export const itemWithId = atomFamily({
