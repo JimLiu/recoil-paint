@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native-web';
 import ColorPicker from './ColorPicker';
+import SelectionInfo from './SelectionInfo';
 
 function Row({ children }) {
   return (
@@ -18,6 +19,7 @@ export default function InformationBar() {
         <Text style={styles.title}>Background color:</Text>
         <ColorPicker />
       </Row>
+      <SelectionInfo />
     </View>
   );
 }
