@@ -3,22 +3,16 @@ import { View, StyleSheet, Text } from 'react-native-web';
 import ColorPicker from './ColorPicker';
 import SelectionInfo from './SelectionInfo';
 
-function Row({ children }) {
-  return (
-    <View style={styles.row}>{children}</View>
-  );
-}
-
 export default function InformationBar() {
   return (
     <View style={styles.root}>
-      <Row>
+      <View style={styles.row}>
         <Text>Document:</Text>
-      </Row>
-      <Row>
+      </View>
+      <View style={[styles.row, styles.colorRow]}>
         <Text style={styles.title}>Background color:</Text>
         <ColorPicker />
-      </Row>
+      </View>
       <SelectionInfo />
     </View>
   );
@@ -36,6 +30,9 @@ const styles = StyleSheet.create({
     marginBottom: 24,
     flexDirection: 'row',
     alignItems: 'center',
+  },
+  colorRow: {
+    zIndex: 1,
   },
   title: {
     fontWeight: 'bold'
