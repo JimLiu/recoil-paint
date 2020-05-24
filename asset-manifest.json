@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/recoil-paint/static/js/main.c83c72be.chunk.js",
-    "main.js.map": "/recoil-paint/static/js/main.c83c72be.chunk.js.map",
+    "main.js": "/recoil-paint/static/js/main.1f2a9a1c.chunk.js",
+    "main.js.map": "/recoil-paint/static/js/main.1f2a9a1c.chunk.js.map",
     "runtime-main.js": "/recoil-paint/static/js/runtime-main.752b6890.js",
     "runtime-main.js.map": "/recoil-paint/static/js/runtime-main.752b6890.js.map",
     "static/js/2.faccca83.chunk.js": "/recoil-paint/static/js/2.faccca83.chunk.js",
     "static/js/2.faccca83.chunk.js.map": "/recoil-paint/static/js/2.faccca83.chunk.js.map",
     "index.html": "/recoil-paint/index.html",
-    "precache-manifest.bcda3eb4a8cc9e5941c6b8d5072bb50f.js": "/recoil-paint/precache-manifest.bcda3eb4a8cc9e5941c6b8d5072bb50f.js",
+    "precache-manifest.7ef4948ebd5858d326408dc81a6aa8c3.js": "/recoil-paint/precache-manifest.7ef4948ebd5858d326408dc81a6aa8c3.js",
     "service-worker.js": "/recoil-paint/service-worker.js",
     "static/js/2.faccca83.chunk.js.LICENSE.txt": "/recoil-paint/static/js/2.faccca83.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.752b6890.js",
     "static/js/2.faccca83.chunk.js",
-    "static/js/main.c83c72be.chunk.js"
+    "static/js/main.1f2a9a1c.chunk.js"
   ]
 }
