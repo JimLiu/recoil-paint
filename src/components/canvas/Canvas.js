@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
   root: {
     flex: 1,
     backgroundColor: 'white',
+    overflow: 'auto',
   },
   svg: {
     flex: 1,

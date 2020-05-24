@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRecoilState, useSetRecoilState, useRecoilValue } from 'recoil';
-import Button from './Button';
+import Button from '../common/Button';
 import SquareIcon from '../icons/Square';
 import {
   itemIdsState,
@@ -20,7 +20,6 @@ export default function NewRectangleButton({ style }) {
   const { onMouseDown } = useMoveItems(({ status, origin }) => {
     if (status === 'start') {
       let id = createNewShape({ x: origin.clientX - canvasLayout.x, y: origin.clientY - canvasLayout.y });
-      // setNewItemOrigin(origin.clientX - canvasLayout.x, origin.clientY - canvasLayout.y);
       setItemIds([...itemIds, id]);
       setSelectedIds([]);
       setMovingItemIds([id]);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native-web';
-import Button from './Button';
+import Button from '../common/Button';
 import ImageIcon from '../icons/Image';
 import NewRectangleButton from './NewRectangleButton';
 import StatisticsIcon from '../icons/Statistics';

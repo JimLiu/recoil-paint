@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { View, StyleSheet, Text, TextInput } from 'react-native-web';
 import { useRecoilState } from 'recoil';
-import NumberInput from './NumberInput';
+import NumberInput from '../common/NumberInput';
 import { selectedItemsSelector } from '../../recoil/selectors';
 
 export default function SelectionInfo() {

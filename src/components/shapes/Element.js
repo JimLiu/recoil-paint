@@ -23,7 +23,7 @@ export default function Element({
       onClick={onClick}
     >
       {label ? (
-        <Text>{label}</Text>
+        <Text selectable={false}>{label}</Text>
       ) : null}
     </View>
   );

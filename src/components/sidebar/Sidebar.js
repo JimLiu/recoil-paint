@@ -2,12 +2,16 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native-web';
 import Toolbar from '../toolbar/Toolbar';
 import ItemInfoList from './ItemInfoList';
+import PreviewButton from './PreviewButton';
 
 export default function Sidebar() {
   return (
     <View style={styles.root}>
       <Toolbar />
       <ItemInfoList />
+      <View>
+        <PreviewButton />
+      </View>
     </View>
   );
 }

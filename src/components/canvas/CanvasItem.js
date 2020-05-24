@@ -6,6 +6,7 @@ import useMoveItems from '../hooks/useMoveItems';
 
 export default function CanvasItem({ id }) {
   const itemState = useRecoilValue(itemWithId(id));
+
   const setMovingItemIds = useSetRecoilState(movingItemIdsState);
   const [selectedIds, setSelectedIds] = useRecoilState(selectedIdsState);
 
@@ -25,8 +26,6 @@ export default function CanvasItem({ id }) {
       setMovingItemIds([]);
     }
   });
-
-
 
   const Shape = createShape(itemState);
   if (!Shape) {
