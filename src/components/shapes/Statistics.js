@@ -9,8 +9,9 @@ export default function Statistics({ series, ...others }) {
       style={styles.root}
     >
       <View style={styles.container}>
-        {series.map(serie => (
+        {series.map((serie, i) => (
           <View
+            key={`serie-${i}`}
             style={[
               styles.bar,
               {
