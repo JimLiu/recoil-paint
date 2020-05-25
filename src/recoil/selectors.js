@@ -1,8 +1,21 @@
 import { selector } from 'recoil';
 import computeBoundingBox from '../utils/computeBoundingBox';
 import {
-  itemWithId, itemIdsState, selectedIdsState, movingItemIdsState
+  privateItemStateWithId, itemIdsState, selectedIdsState, movingItemIdsState
 } from './atoms';
+import applyConstraints from '../utils/applyConstraints';
+
+export const itemWithId = id => selector({
+  key: `item${id}`,
+  get: ({ get }) => {
+    const state = get(privateItemStateWithId(id));
+    return applyConstraints(state);
+  },
+  set: ({ set }, newValue) => {
+    const state = privateItemStateWithId(id);
+    set(state, newValue);
+  }
+});
 
 function itemsSelector(key, state) {
   return selector({

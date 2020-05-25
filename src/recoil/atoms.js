@@ -1,6 +1,5 @@
-import { atom, selector } from 'recoil';
+import { atom } from 'recoil';
 import memoize from '../utils/memoize';
-import applyConstraints from '../utils/applyConstraints';
 import { getDefaultShape } from './defaults';
 
 export const canvasLayoutState = atom({
@@ -43,37 +42,3 @@ export const privateItemStateWithId =
     key: `private-item${id}`,
     default: getDefaultShape(id),
   }));
-
-export const itemWithId = id => selector({
-  key: `item${id}`,
-  get: ({ get }) => {
-    const state = get(privateItemStateWithId(id));
-    return applyConstraints(state);
-  },
-  set: ({ set }, newValue) => {
-    const state = privateItemStateWithId(id);
-    set(state, newValue);
-  }
-})
-
-// export const itemWithId = atomFamily({
-//   key: 'element',
-//   default: (id) => {
-//     return {
-//       id,
-//       type: 'rect',
-//       label: '',
-//       fill: '#dbdde4',
-//       x: newItemOrigin.x,
-//       y: newItemOrigin.y,
-//       width: 200,
-//       height: 100,
-//     }
-//   },
-// })
-
-
-// const dimensionStateFamily = atomFamily({
-//   key: 'dimension',
-//   default: [0, 0, 200, 100],
-// });

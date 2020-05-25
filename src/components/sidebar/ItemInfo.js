@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native-web';
 import { useRecoilValue } from 'recoil';
-import { itemWithId } from '../../recoil/atoms';
+import { itemWithId } from '../../recoil/selectors';
 
 export default function ItemInfo({ id }) {
   const itemState = useRecoilValue(itemWithId(id));

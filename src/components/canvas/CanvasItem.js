@@ -1,7 +1,8 @@
 import React from 'react';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { createShape } from '../shapes';
-import { itemWithId, selectedIdsState } from '../../recoil/atoms';
+import { selectedIdsState } from '../../recoil/atoms';
+import { itemWithId } from '../../recoil/selectors';
 
 export default function CanvasItem({ id }) {
   const itemState = useRecoilValue(itemWithId(id));
