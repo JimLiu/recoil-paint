@@ -32,11 +32,6 @@ export const movingItemIdsState = atom({
   default: [],
 });
 
-export const movingItemsSnapshotState = atom({
-  key: 'movingItemsSnapshotState',
-  default: {},
-});
-
 export const privateItemStateWithId =
   memoize(id => atom({
     key: `private-item${id}`,
