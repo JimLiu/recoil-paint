@@ -23,10 +23,10 @@ export default function Element({
       onMouseDown={onMouseDown}
       onClick={onClick}
     >
+      {children}
       {label ? (
         <Text selectable={false}>{label}</Text>
       ) : null}
-      {children}
     </View>
   );
 }

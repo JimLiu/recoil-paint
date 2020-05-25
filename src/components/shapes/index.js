@@ -1,11 +1,13 @@
 import Rectangle from './Rectangle';
 import Ellipse from './Ellipse';
 import Image from './Image';
+import Statistics from './Statistics';
 
 const shapes = {
   rect: Rectangle,
   ellipse: Ellipse,
   image: Image,
+  statistics: Statistics,
 }
 
 function createShape(shape) {
@@ -16,5 +18,6 @@ function createShape(shape) {
 export {
   Rectangle,
   Ellipse,
+  Statistics,
   createShape,
 }

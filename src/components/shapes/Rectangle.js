@@ -15,4 +15,4 @@ const styles = StyleSheet.create({
   root: {
 
   }
-})
+});

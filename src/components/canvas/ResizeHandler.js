@@ -34,10 +34,6 @@ export default function ResizeHandler() {
   const [selectedItemsSnapshot, setSelectedItemsSnapshot] = useState(null);
 
   const { onMouseDown } = useMove(({ status, offset }) => {
-    if (selectedItems.length !== 1) {
-      return;
-    }
-
     if (status === 'start') {
       setSelectedItemsSnapshot(selectedItems)
     }
@@ -47,7 +43,7 @@ export default function ResizeHandler() {
     }
   })
 
-  if (selectedItems.length !== 1) {
+  if (selectedItems.length !== 1 || selectedItems[0].type === 'statistics') {
     return null;
   }
 
