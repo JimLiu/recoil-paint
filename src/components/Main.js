@@ -18,6 +18,6 @@ const styles = StyleSheet.create({
   root: {
     height: '100vh',
     flexDirection: 'row',
-    backgroundColor: '#ebeef2',
+    backgroundColor: '#eef0f4',
   },
 })

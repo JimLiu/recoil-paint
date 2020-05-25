@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   root: {
     width: 240,
     borderLeftWidth: 1,
-    borderLeftColor: '#ccc',
+    borderLeftColor: '#d6d8d9',
     borderLeftType: 'solid',
     padding: 16,
   },

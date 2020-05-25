@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     width: 240,
     height: '100vh',
     borderRightWidth: 1,
-    borderRightColor: '#ccc',
+    borderRightColor: '#d6d8d9',
     borderRightType: 'solid',
     padding: 16
   },

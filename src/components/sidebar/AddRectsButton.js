@@ -39,7 +39,7 @@ export default function AddRectsButton() {
 
 const styles = StyleSheet.create({
   root: {
-    backgroundColor: '#3c8227'
+    backgroundColor: '#12850b'
   },
   text: {
     color: 'white',

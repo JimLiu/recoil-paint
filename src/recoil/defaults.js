@@ -4,7 +4,7 @@ export const defaultShape = {
   x: 0,
   y: 0,
   label: 'Recoil',
-  fill: '#dbdde4',
+  fill: '#e0e1e8',
   width: 200,
   height: 100,
 };

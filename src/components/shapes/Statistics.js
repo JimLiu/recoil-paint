@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   },
   bar: {
     marginHorizontal: 4,
-    backgroundColor: '#3c88c2',
+    backgroundColor: '#1189c7',
     width: 20,
   }
 });
