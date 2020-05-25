@@ -1,24 +1,15 @@
 import { useEffect } from 'react';
-import { useRecoilValue, useRecoilState, useRecoilCallback } from 'recoil';
+import { useRecoilValue, useRecoilState } from 'recoil';
 import { movingItemsSnapshotState, movingItemIdsState } from '../recoil/atoms';
-import { itemWithId } from '../recoil/selectors';
+import { useLoadItems, useUpdateItems } from '../recoil/hooks';
 import useMove from './useMove';
 
 export default function useMoveItems(func) {
   const [movingItemsSnapshot, setMovingItemsSnapshot] = useRecoilState(movingItemsSnapshotState);
   const movingItemIds = useRecoilValue(movingItemIdsState);
 
-  const saveMovingItems = useRecoilCallback(async ({ getPromise }, itemIds) => {
-    const items = await Promise.all(itemIds.map(id => getPromise(itemWithId(id))));
-    setMovingItemsSnapshot(items);
-    return items;
-  });
-
-  const updateItemsPosition = useRecoilCallback(({ set }, newValue) => {
-    newValue.forEach(item => {
-      set(itemWithId(item.id), item);
-    })
-  });
+  const loadMovingItems = useLoadItems();
+  const updateItemsPosition = useUpdateItems();
 
   const { onMouseDown } = useMove((params) => {
     const { status, offset } = params;
@@ -37,9 +28,12 @@ export default function useMoveItems(func) {
   });
 
   useEffect(() => {
-    saveMovingItems(movingItemIds);
+    loadMovingItems(movingItemIds)
+      .then(items => {
+        setMovingItemsSnapshot(items);
+      });
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [movingItemIds]);
+  }, [movingItemIds]); // should only depend on `movingItemIds`
 
   return {
     onMouseDown

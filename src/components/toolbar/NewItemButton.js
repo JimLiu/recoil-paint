@@ -1,28 +1,17 @@
 import React, { useState } from 'react';
-import { useSetRecoilState, useRecoilValue, useRecoilCallback } from 'recoil';
+import { useSetRecoilState, useRecoilValue } from 'recoil';
 import Button from '../common/Button';
 import useMove from '../../hooks/useMove';
 import { itemIdsState, canvasLayoutState, selectedIdsState } from '../../recoil/atoms';
-import { itemWithId } from '../../recoil/selectors';
-import { createNewShape } from '../../recoil/defaults';
+import { useUpdateItem, useNewItem } from '../../recoil/hooks';
 
 export default function NewItemButton({ newShapeProps = {}, ...others }) {
   const [newItem, setNewItem] = useState(null);
   const setItemIds = useSetRecoilState(itemIdsState);
   const setSelectedIds = useSetRecoilState(selectedIdsState);
   const canvasLayout = useRecoilValue(canvasLayoutState);
-
-
-  const createNewItem = useRecoilCallback(async ({ getPromise }, shapeParam) => {
-    let id = createNewShape(shapeParam);
-    const item = await getPromise(itemWithId(id));
-
-    return item;
-  });
-
-  const updatePosition = useRecoilCallback(({ set }, newValue) => {
-    set(itemWithId(newValue.id), newValue)
-  });
+  const createNewItem = useNewItem();
+  const updatePosition = useUpdateItem();
 
   const { onMouseDown } = useMove(({ status, origin, offset }) => {
     if (status === 'start') {
