@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { View, StyleSheet } from 'react-native-web';
 
-export default function Button({ Icon, disabled, style, children, ...others }) {
+export default function Button({
+  Icon, disabled, style, children,
+  title, accessibilityLabel,
+  ...others
+}) {
+  const ref = useRef();
+
+  useEffect(() => {
+    ref.current.setNativeProps({ title });
+  }, [title]);
 
   return (
     <View
+      {...others}
       accessibilityRole="button"
+      accessibilityLabel={accessibilityLabel || title}
       disabled={disabled}
+      ref={ref}
       style={[
         styles.root,
         disabled && styles.disabled,
@@ -14,7 +26,6 @@ export default function Button({ Icon, disabled, style, children, ...others }) {
         !Icon && styles.text,
         style
       ]}
-      {...others}
     >
       {Icon && <Icon style={[disabled && styles.disabledIcon]} />}
       {!Icon && children}

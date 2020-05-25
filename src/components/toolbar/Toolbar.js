@@ -1,15 +1,15 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native-web';
 import Button from '../common/Button';
-import ImageIcon from '../icons/Image';
 import NewRectangleButton from './NewRectangleButton';
+import NewImageButton from './NewImageButton';
 import StatisticsIcon from '../icons/Statistics';
 
 export default function Toolbar() {
   return (
     <View style={styles.root}>
       <NewRectangleButton style={styles.button} />
-      <Button disabled Icon={ImageIcon} style={styles.button} />
+      <NewImageButton style={styles.button} />
       <Button disabled Icon={StatisticsIcon} style={styles.button} />
     </View>
   );

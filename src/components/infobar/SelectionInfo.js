@@ -42,14 +42,16 @@ export default function SelectionInfo() {
           />
         </View>
       </View>
-      <View style={styles.labelRow}>
-        <Text style={styles.bold}>Label:</Text>
-        <TextInput
-          value={selectedItem.label}
-          style={styles.input}
-          onChangeText={text => updateSelectedItem('label', text)}
-        />
-      </View>
+      {['image'].indexOf(selectedItem.type) === -1 && (
+        <View style={styles.labelRow}>
+          <Text style={styles.bold}>Label:</Text>
+          <TextInput
+            value={selectedItem.label}
+            style={styles.input}
+            onChangeText={text => updateSelectedItem('label', text)}
+          />
+        </View>
+      )}
     </View>
   );
 }
