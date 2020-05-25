@@ -14,11 +14,7 @@ export default function useMoveItems(func) {
   const updateSnpashot = useCallback(async () => {
     const items = await loadMovingItems(movingItemIds);
     setMovingItemsSnapshot(items);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [movingItemIds]);
-  // `updateSnpashot` should only depend on `movingItemIds`, should NOT depend on `loadMovingItems`
-  // `useRecoilCallback` is not memoized, which means `loadMovingItems` is a new function after re-render
-  // that causes an endless loop
+  }, [loadMovingItems, movingItemIds]);
 
   const { onMouseDown } = useMove((params) => {
     const { status, offset } = params;

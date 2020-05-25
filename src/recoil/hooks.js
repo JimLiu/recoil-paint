@@ -22,7 +22,7 @@ export function useLoadItems() {
     return await Promise.all(
       itemIds.map(id => getPromise(itemWithId(id)))
     );
-  });
+  }, []);
 }
 
 export function useUpdateItems() {
@@ -30,5 +30,5 @@ export function useUpdateItems() {
     newValue.forEach(item => {
       set(itemWithId(item.id), item);
     })
-  });
+  }, []);
 }
