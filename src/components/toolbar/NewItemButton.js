@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSetRecoilState, useRecoilValue, useRecoilCallback } from 'recoil';
 import Button from '../common/Button';
-import useMove from '../hooks/useMove';
+import useMove from '../../hooks/useMove';
 import { itemIdsState, canvasLayoutState, selectedIdsState } from '../../recoil/atoms';
 import { itemWithId } from '../../recoil/selectors';
 import { createNewShape } from '../../recoil/defaults';

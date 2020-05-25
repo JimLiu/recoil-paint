@@ -4,7 +4,7 @@ import { useRecoilValue, useSetRecoilState } from 'recoil';
 import ResizeHandler from './ResizeHandler';
 import { movingItemIdsState, selectedIdsState } from '../../recoil/atoms';
 import { selectionBoundingBox } from '../../recoil/selectors';
-import useMoveItems from '../hooks/useMoveItems';
+import useMoveItems from '../../hooks/useMoveItems';
 
 export default function Selection() {
   const selectedIds = useRecoilValue(selectedIdsState);
