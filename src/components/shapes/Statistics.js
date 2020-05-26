@@ -9,7 +9,6 @@ export default function Statistics({ id, series, status, ...others }) {
   const statisticsLoadable = useRecoilValueLoadable(statisticsQuery(id));
 
   useEffect(() => {
-    console.log(statisticsLoadable.state)
     if (statisticsLoadable.state === 'hasValue') {
       setItemState(item => ({
         ...item,
