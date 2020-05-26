@@ -9,7 +9,7 @@ export default function ItemInfo({ id }) {
 
   return (
     <View style={styles.root}>
-      {label && <Text style={styles.label}>{label}</Text>}
+      {label ? <Text style={styles.label}>{label}</Text> : null}
       <Text style={styles.subLabel}>{`(x = ${x} y = ${y})`}</Text>
     </View>
   )

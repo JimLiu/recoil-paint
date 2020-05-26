@@ -2,8 +2,18 @@ import { selector } from 'recoil';
 import computeBoundingBox from '../utils/computeBoundingBox';
 import { privateItemStateWithId, selectedIdsState } from './atoms';
 import applyConstraints from '../utils/applyConstraints';
+import { loadStatistics } from '../utils/statistics';
+import memoize from '../utils/memoize';
 
-export const itemWithId = id => selector({
+export const statisticsQuery = memoize(id => selector({
+  key: `Statistics${id}`,
+  get: async ({ get }) => {
+    let statistics = await loadStatistics(id);
+    return statistics;
+  },
+}));
+
+export const itemWithId = memoize(id => selector({
   key: `item${id}`,
   get: ({ get }) => {
     const state = get(privateItemStateWithId(id));
@@ -13,7 +23,7 @@ export const itemWithId = id => selector({
     const state = privateItemStateWithId(id);
     set(state, newValue);
   }
-});
+}));
 
 function itemsSelector(key, state) {
   return selector({
