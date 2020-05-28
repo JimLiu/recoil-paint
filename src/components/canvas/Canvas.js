@@ -32,7 +32,8 @@ const styles = StyleSheet.create({
   root: {
     flex: 1,
     backgroundColor: 'white',
-    overflow: 'auto',
+    overflow: 'visible',
+    zIndex: 0,
   },
   container: {
     flex: 1,
