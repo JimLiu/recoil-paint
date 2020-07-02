@@ -3,13 +3,13 @@ import { itemWithId } from './selectors';
 import { createNewShape } from './defaults';
 
 export function useUpdateItem() {
-  return useRecoilCallback(({ set }, newValue) => {
+  return useRecoilCallback(({set}) => async (newValue) => {
     set(itemWithId(newValue.id), newValue)
   });
 }
 
 export function useNewItem() {
-  return useRecoilCallback(async ({ getPromise }, shapeParam) => {
+  return useRecoilCallback(({snapshot: {getPromise}}) => async (shapeParam) => {
     let id = createNewShape(shapeParam);
     const item = await getPromise(itemWithId(id));
 
@@ -18,7 +18,7 @@ export function useNewItem() {
 }
 
 export function useLoadItems() {
-  return useRecoilCallback(async ({ getPromise }, itemIds) => {
+  return useRecoilCallback(({snapshot: {getPromise}}) => async (itemIds) => {
     return await Promise.all(
       itemIds.map(id => getPromise(itemWithId(id)))
     );
@@ -26,7 +26,7 @@ export function useLoadItems() {
 }
 
 export function useUpdateItems() {
-  return useRecoilCallback(({ set }, newValue) => {
+  return useRecoilCallback(({set}) => async (newValue) => {
     newValue.forEach(item => {
       set(itemWithId(item.id), item);
     })
