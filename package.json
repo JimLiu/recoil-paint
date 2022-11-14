@@ -10,7 +10,7 @@
     "react-color": "^2.18.1",
     "react-dom": "^16.13.1",
     "react-native-web": "^0.12.2",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.1",
     "recoil": "^0.0.10"
   },
   "homepage": "https://jimliu.github.io/recoil-paint/",
